@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     name: "Step 01"
     steps:
-    - name: "Hello action"
-      uses: gabriel-dantas98/find-pull-request-action@v1
-      id: find-pr
-      with:
-        sha: ${{ github.event.client_payload.sha }}
-        repo: "gabriel-dantas98/klyntar"
-      run: echo "Your PR is ${PR}"
-      if: success() && steps.findPr.outputs.number
-      env:
-        PR: ${{ steps.find-pr.outputs.pr }}
+      - name: "Hello action"
+        uses: gabriel-dantas98/find-pull-request-action@v1
+        id: find-pr
+        with:
+          sha: ${{ github.event.client_payload.sha }}
+          repo: "gabriel-dantas98/klyntar"
+        run: echo "Your PR is ${PR}"
+        if: success() && steps.findPr.outputs.number
+        env:
+          PR: ${{ steps.find-pr.outputs.pr }}
