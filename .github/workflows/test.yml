@@ -15,7 +15,3 @@ jobs:
         with:
           sha: ${{ github.event.client_payload.sha }}
           repo: "gabriel-dantas98/klyntar"
-        run: echo "Your PR is ${PR}"
-        if: success() && steps.findPr.outputs.number
-        env:
-          PR: ${{ steps.find-pr.outputs.pr }}
