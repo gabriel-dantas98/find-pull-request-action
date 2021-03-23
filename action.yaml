@@ -1,0 +1,27 @@
+
+name: Get a pull request
+author: gabriel-dantas98
+description: Find a PR associated with commit/sha or branch.
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client.  Defaults to github provided token.
+    default: ${{ github.token }}
+  sha:
+    description: Sha to get PR for.  Defaults to current sha.
+    default: ${{ github.sha }}
+  repository:
+    description: Sha to get PR for.  Defaults to current sha.
+    default: ${{ github.repository }}
+outputs:
+  number:
+    description: The PR's number if the PR was found (e.g. '345' for #345)
+  title:
+    description: The PR's title if the PR was found
+  body:
+    description: The PR's body if the PR was found
+runs:
+  using: node12
+  main: 'src/index.js'
+branding:
+  icon: git-pull-request
+  color: green
