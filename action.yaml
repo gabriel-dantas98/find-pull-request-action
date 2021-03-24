@@ -10,8 +10,11 @@ inputs:
     description: Sha to get PR for.  Defaults to current sha.
     default: ${{ github.sha }}
   repository:
-    description: Sha to get PR for.  Defaults to current sha.
+    description: repository. Defaults to current repository.
     default: ${{ github.repository }}
+  owner:
+    description: Sha to get PR for.  Defaults to current sha.
+    default: ${{ github.owner }}
 outputs:
   number:
     description: The PR's number if the PR was found (e.g. '345' for #345)
