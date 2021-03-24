@@ -9,7 +9,7 @@ jobs:
     name: "Step 01"
     steps:
       - name: "Hello action"
-        uses: gabriel-dantas98/find-pull-request-action@v1.1
+        uses: gabriel-dantas98/find-pull-request-action@v1.3
         id: find-pr
         with:
           sha: ${{ github.event.client_payload.sha }}
