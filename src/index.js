@@ -6,6 +6,10 @@ async function main() {
     const sha = core.getInput('sha', { required: true});
     const repo = core.getInput('repository') || github.context.repo;
     const owner = core.getInput('owner') || github.context.owner;
+    
+    const payload = JSON.stringify(github.context.payload, undefined, 2)
+
+    console.log(`The event payload: ${payload}`);
 
     console.log(`debugging ${sha} ${repo} ${owner}`)
     
@@ -17,7 +21,6 @@ async function main() {
         commit_sha: sha,
     });
 
-    
     const pr = result.data.length > 0 && result.data.filter(el => el.state === 'open')[0];
     
     core.setOutput('pr', pr && pr.number || '');
