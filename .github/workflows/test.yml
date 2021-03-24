@@ -12,5 +12,5 @@ jobs:
         uses: gabriel-dantas98/find-pull-request-action@v1.3
         id: find-pr
         with:
-          sha: ${{ github.event.client_payload.sha }}
+          sha: ${{ github.event.sha }}
           repository: "gabriel-dantas98/klyntar"
