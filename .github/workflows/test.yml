@@ -14,4 +14,4 @@ jobs:
         id: find-pr
         with:
           sha: ${{ github.event.client_payload.sha }}
-          repo: "gabriel-dantas98/klyntar"
+          repository: "gabriel-dantas98/klyntar"
